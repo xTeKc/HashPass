@@ -48,5 +48,13 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     println!("password not found in wordlist :(");
 
+    //if program reaches the last line of <main> func the <main>
+    //the <main> func will evaluate <Ok(())> which means "success"
+
+    //equivalent would have been <return Ok(());> but NOT <Ok(());>
+    
+    //Rust expressions evaluate to a value and...
+    //their opposites, statements, and instructions that do something...
+    //and end with semicolon <;>
     Ok(())
 }
