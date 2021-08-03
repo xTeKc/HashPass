@@ -2,10 +2,12 @@
 //import error
 use std::{
     env,
-    error::Error;
+    error::Error,
 };
 
-fn main() {
+const SHA1_HEX_STRING_LENGTH: usize = 40;
+
+fn main() -> Result<(), Box<dyn Error>> {
     //calls method args from this module and returns iterator
     //which is collected into Vec<String>, a Vector of String objects
     let args: Vec<String> = env::args().collect();
@@ -14,6 +16,13 @@ fn main() {
     if args.len() != 3 {
         println!("Usage:");
         println!("sha1fetch: <wordlist.txt> <sha1hash>");
-        return;
+        return Ok(());
     }
+
+    let hash_to_fetch = args[2].trim();
+    if hash_to_fetch.len() != SHA1_HEX_STRING_LENGTH {
+        return Err("sha1 hash is not valid".into());
+    }
+
+    Ok(())
 }
