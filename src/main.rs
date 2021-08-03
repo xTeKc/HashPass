@@ -35,9 +35,14 @@ fn main() -> Result<(), Box<dyn Error>> {
     let reader = BufReader::new(&wordlist_file);
     //read from the wordlist file
     for line in reader.lines() {
-        let line = line?.trim().to_string();
-        println!("{}", line);
+        let common_password = line?.trim().to_string();
+        if hash_to_fetch == &hex::encode(sha1::Sha1::digest(common_password.as_bytes())) {
+            println!("{}", &common_password);
+            return Ok(());
+        }
     }
+
+    println!("password not found in wordlist :(");
 
     Ok(())
 }
