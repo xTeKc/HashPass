@@ -1,5 +1,5 @@
 //import env from standard library
-//import error
+//import error from standard library
 use std::{
     env,
     error::Error,
