@@ -1,6 +1,8 @@
 //import env from standard library
 //import error from standard library
 //import fs and io from standard library
+//import sha-1 from crates_io
+use sha1::Digest;
 use std::{
     env,
     error::Error,
