@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "sha1Fetch"
+name = "sha1fetch"
 version = "0.1.0"
