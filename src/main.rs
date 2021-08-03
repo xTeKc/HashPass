@@ -1,8 +1,11 @@
 //import env from standard library
 //import error from standard library
+//import fs and io from standard library
 use std::{
     env,
     error::Error,
+    fs::File,
+    io::{BufRead, BufReader},
 };
 
 const SHA1_HEX_STRING_LENGTH: usize = 40;
