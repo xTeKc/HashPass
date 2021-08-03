@@ -31,6 +31,8 @@ fn main() -> Result<(), Box<dyn Error>> {
         return Err("sha1 hash is not valid".into());
     }
 
+    //wordlist_file owns the file and has <main> func as scope
+    //whenever <main> func exits, the owned file is closed
     let wordlist_file = File::open(&args[1])?;
     let reader = BufReader::new(&wordlist_file);
     //read from the wordlist file
