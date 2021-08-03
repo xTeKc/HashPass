@@ -1,5 +1,9 @@
 //import env from standard library
-use std::env;
+//import error
+use std::{
+    env,
+    error::Error;
+};
 
 fn main() {
     //calls method args from this module and returns iterator
