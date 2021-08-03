@@ -6,6 +6,7 @@ fn main() {
     //which is collected into Vec<String>, a Vector of String objects
     let args: Vec<String> = env::args().collect();
 
+    //return msg if length is not atleast 3 characters
     if args.len() != 3 {
         println!("Usage:");
         println!("sha1fetch: <wordlist.txt> <sha1hash>");
