@@ -36,6 +36,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     //read from the wordlist file
     for line in reader.lines() {
         let common_password = line?.trim().to_string();
+        //check if hash is correct hash and print 
         if hash_to_fetch == &hex::encode(sha1::Sha1::digest(common_password.as_bytes())) {
             println!("{}", &common_password);
             return Ok(());
