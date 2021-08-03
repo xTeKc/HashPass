@@ -29,5 +29,13 @@ fn main() -> Result<(), Box<dyn Error>> {
         return Err("sha1 hash is not valid".into());
     }
 
+    let wordlist_file = File::open(&args[1])?;
+    let reader = BufReader::new(&wordlist_file);
+    //read from the wordlist file
+    for line in reader.lines() {
+        let line = line?.trim().to_string();
+        println!("{}", line);
+    }
+
     Ok(())
 }
