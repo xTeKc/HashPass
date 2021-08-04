@@ -3,7 +3,7 @@
 ---
 
 ### Features: 
-+   Convert Hashed passwords into Text
++   Convert SHA-1 Hashed passwords into Text
     + `cargo run -- wordlist.txt <HASH>`
 <br>
 
