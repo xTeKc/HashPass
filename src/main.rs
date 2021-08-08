@@ -9,6 +9,7 @@ use std::{
     fs::File,
     io::{BufRead, BufReader},
 };
+use gio::prelude::*;
 use gtk::prelude::*;
 use gladis::Gladis;
 
