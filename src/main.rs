@@ -142,3 +142,9 @@ const GLADE_SRC: &str = r#"
 </interface>"#;
 
 
+#[derive(Gladis, Clone)]
+struct Ui {
+
+    
+
+}
