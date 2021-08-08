@@ -145,6 +145,10 @@ const GLADE_SRC: &str = r#"
 #[derive(Gladis, Clone)]
 struct Ui {
 
-    
-
+    window: gtk::Window,
+    fixed: gtk::Fixed,
+    button1: gtk::Button,
+    input1: gtk::Entry,
+    textview1: gtk::TextView,
+    label1: gtk::Label,
 }
