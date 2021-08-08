@@ -9,6 +9,8 @@ use std::{
     fs::File,
     io::{BufRead, BufReader},
 };
+use gtk::prelude::*;
+use gladis::Gladis;
 
 const SHA1_HEX_STRING_LENGTH: usize = 40;
 
@@ -58,3 +60,84 @@ fn main() -> Result<(), Box<dyn Error>> {
     //and end with semicolon <;>
     Ok(())
 }
+
+
+const GLADE_SRC: &str = r#"
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.38.2 -->
+<interface>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkWindow" id="window">
+    <property name="can-focus">False</property>
+    <property name="resizable">False</property>
+    <property name="window-position">center-always</property>
+    <property name="default-width">440</property>
+    <property name="default-height">260</property>
+    <child>
+      <object class="GtkFixed" id="fixed">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <object class="GtkButton" id="button1">
+            <property name="label" translatable="yes">Hash</property>
+            <property name="width-request">100</property>
+            <property name="height-request">29</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <signal name="clicked" handler="on_button1_clicked" object="input1" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">308</property>
+            <property name="y">133</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="input1">
+            <property name="width-request">270</property>
+            <property name="height-request">34</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="placeholder-text" translatable="yes">Enter SHA1 Hash</property>
+          </object>
+          <packing>
+            <property name="x">27</property>
+            <property name="y">94</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkTextView" id="textview1">
+            <property name="width-request">270</property>
+            <property name="height-request">35</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="editable">False</property>
+            <property name="cursor-visible">False</property>
+          </object>
+          <packing>
+            <property name="x">27</property>
+            <property name="y">177</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="width-request">400</property>
+            <property name="height-request">50</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="label" translatable="yes">SHA1Fetch</property>
+            <attributes>
+              <attribute name="font-desc" value="DejaVu Sans Bold 20"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">27</property>
+            <property name="y">18</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>"#;
+
+

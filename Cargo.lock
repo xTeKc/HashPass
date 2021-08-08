@@ -613,6 +613,7 @@ name = "sha1fetch"
 version = "0.1.0"
 dependencies = [
  "gladis",
+ "gtk",
  "hex",
  "sha-1",
 ]
