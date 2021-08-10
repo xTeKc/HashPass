@@ -156,4 +156,8 @@ pub struct Ui {
 fn build_ui(app &gtk::Application) {
     let glade_src = include_str!("sha1fetch_gui.glade");
     let ui = Ui::from_string(glade_src).unwrap();
+
+    ui.window.set_application(Some(app));
+
+    
 }
