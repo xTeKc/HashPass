@@ -153,3 +153,7 @@ pub struct Ui {
     pub label1: gtk::Label,
 }
 
+fn build_ui(app &gtk::Application) {
+    let glade_src = include_str!("sha1fetch_gui.glade");
+    let ui = Ui::from_string(glade_src).unwrap();
+}
