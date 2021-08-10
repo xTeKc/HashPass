@@ -143,14 +143,14 @@ const GLADE_SRC: &str = r#"
 
 
 #[derive(Gladis, Clone)]
-struct Ui {
+pub struct Ui {
 
-    window: gtk::Window,
-    fixed: gtk::Fixed,
-    button1: gtk::Button,
-    input1: gtk::Entry,
-    textview1: gtk::TextView,
-    label1: gtk::Label,
+    pub window: gtk::Window,
+    pub fixed: gtk::Fixed,
+    pub button1: gtk::Button,
+    pub input1: gtk::Entry,
+    pub textview1: gtk::TextView,
+    pub label1: gtk::Label,
 }
 
 fn build_ui(app: &gtk::Application) {
@@ -159,7 +159,8 @@ fn build_ui(app: &gtk::Application) {
 
     ui.window.set_application(Some(app));
 
-    ui.fixed.set_application(Some(app));
+    //set the fixed. 
+    ui.fixed.(Some(app));
 
 
 
