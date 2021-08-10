@@ -153,20 +153,3 @@ pub struct Ui {
     pub label1: gtk::Label,
 }
 
-fn build_ui(app: &gtk::Application) {
-    let glade_src = include_str!("sha1fetch_gui.glade");
-    let ui = Ui::from_string(glade_src).unwrap();
-
-    ui.window.set_application(Some(app));
-
-    //set the fixed. 
-    ui.fixed.(Some(app));
-
-
-
-    ui.button1.connect_clicked(move |b| {
-        b.set_label("clicked!");
-    });
-
-
-}
