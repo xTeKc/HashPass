@@ -152,3 +152,20 @@ struct Ui {
     textview1: gtk::TextView,
     label1: gtk::Label,
 }
+
+fn build_ui(app: &gtk::Application) {
+    let glade_src = include_str!("sha1fetch_gui.glade");
+    let ui = Ui::from_string(glade_src).unwrap();
+
+    ui.window.set_application(Some(app));
+
+    ui.fixed.set_application(Some(app));
+
+
+
+    ui.button1.connect_clicked(move |b| {
+        b.set_label("clicked!");
+    });
+
+
+}
