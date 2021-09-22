@@ -1,9 +1,9 @@
-# sha1fetch
+# How to Use
 
 ---
 
 ### Features: 
-+   Convert SHA-1 Hashed passwords into Text
++   Convert SHA1 Hashed passwords into Text
     + `cargo run -- wordlist.txt <HASH>`
 <br>
 
