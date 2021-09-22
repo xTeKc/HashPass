@@ -1,5 +1,5 @@
 [package]
-name = "sha1fetch"
+name = "sha1_dehash"
 version = "0.1.0"
 edition = "2018"
 
