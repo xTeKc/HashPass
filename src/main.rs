@@ -55,13 +55,12 @@ impl From<TabItem> for usize {
     }
 }
 
-fn read_wordlist() -> Result<String, Error> {
-    let read_list = fs::read_to_string("./wordlist.txt");
-    read_list
-}
+// TODO from main
+
+// fn read_wordlist() {
+//     let read_list = fs::read_to_string("./wordlist.txt");
+// }
 
 fn main() {
-   let read_it = read_wordlist()
-    .expect("no wordlist found");
-    println!("{:?}", read_it)
+    
 }
