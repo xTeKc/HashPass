@@ -1,13 +1,9 @@
 [package]
-name = "sha1_dehash"
+name = "hasher"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-gio = "0.14.0"
-gladis = "1.0.0"
-gtk = "0.14.0"
-hex = "0.4.3"
-sha-1 = "0.9.7"
+
