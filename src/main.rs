@@ -1,6 +1,22 @@
-use std::{fs, io::Error};
+use std::fs;
+use std::io;
+use std::thread;
+use std::sync::mpsc;
+use thiserror::Error;
+use chrono::prelude::*;
+use std::time::{Duration, Instant};
+use serde::{Deserialize, Serialize};
+use rand::{distributions::Alphanumeric, prelude::*};
 
-use serde::{Serialize, Deserialize};
+use crossterm::{event::{self, Event as CEvent, KeyCode},
+terminal::{disable_raw_mode, enable_raw_mode},};
+
+use tui::{backend::CrosstermBackend,
+layout::{Alignment, Constraint, Direction, Layout},
+style::{Color, Modifier, Style},
+text::{Span, Spans},
+widgets::{Block, BorderType, Borders, Cell, List, ListItem, 
+ListState, Paragraph, Row, Table, Tabs,},Terminal,};
 
 const DATABASE: &str = "./data/db.json";
 
