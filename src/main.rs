@@ -46,6 +46,15 @@ enum TabItem {
     HashedPasses,
 }
 
+impl From<TabItem> for usize {
+    fn from(input: TabItem) -> usize {
+        match input {
+            TabItem::Main => 0,
+            TabItem::HashedPasses => 1,
+        }
+    }
+}
+
 fn read_wordlist() -> Result<String, Error> {
     let read_list = fs::read_to_string("./wordlist.txt");
     read_list
