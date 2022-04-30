@@ -11,6 +11,14 @@ struct Data {
     hash: String,
 }
 
+#[derive(Error, Debug)]
+pub enum Error {
+    #[error("error reading the DB file: {0}")]
+    ReadDBError(#[from] io::Error),
+    #[error("error parsing the DB file: {0)")]
+    ParseDBError(#[from] serde_json::Error)
+}
+
 fn read_wordlist() -> Result<String, Error> {
     let read_list = fs::read_to_string("./wordlist.txt");
     read_list
