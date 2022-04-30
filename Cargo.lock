@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "hasher"
+name = "hashpass"
 version = "0.1.0"
