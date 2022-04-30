@@ -43,7 +43,7 @@ enum Event<I> {
 #[derive(Clone, Copy, Debug)]
 enum TabItem {
     Main,
-    HashedPass,
+    HashedPasses,
 }
 
 fn read_wordlist() -> Result<String, Error> {
