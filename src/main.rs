@@ -42,7 +42,7 @@ enum Event<I> {
 
 #[derive(Clone, Copy, Debug)]
 enum TabItem {
-    Home,
+    Main,
     HashedPass,
 }
 
