@@ -102,3 +102,8 @@ impl Stylesheet for RuleStyle {
         }
     }
 }
+
+pub struct IndexStyle {
+    pub is_dark_mode: bool,
+}
+
