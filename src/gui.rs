@@ -121,3 +121,6 @@ impl StyleSheet for IndexStyle {
         }
     }
 }
+
+pub struct TooltipStyle;
+
