@@ -139,3 +139,45 @@ pub struct ButtonStyle {
     pub foreground: Option<Color>,
 }
 
+impl StyleSheet for ButtonStyle {
+    fn active(&self) -> Style {
+        Style {
+            background: match background {
+                is_dark_mode => colors::DARK2.into(),
+                _ => colors::LIGHT.into(),
+            },
+            border_color: colors::DARK3,
+            border_radius: 2.0,
+            border_width: match border_width {
+                is_dark_mode => { 0.0 },
+                _ => { 1.0 },
+            },
+            text_color: match foreground.unwrap_or() {
+                is_dark_mode => colors::LIGHT_TEXT,
+                _ => colors::DARK_TEXT,
+            },
+            ..Style::default()
+        }
+    }
+
+    fn hovered(&self) -> Style {
+        Style {
+            background: match background {
+                is_dark_mode => colors::DARK3.into(),
+                _ => colors::LIGHT2.into(),
+            },
+            ..active()
+        }
+    }
+
+    fn pressed(&self) -> Style {
+        Style {
+            background: match background {
+                is_dark_mode => colors::DARK4.into(),
+                _ => colors::LIGHT3.into(),
+            },
+            ..hovered()
+        }
+    }
+
+}
