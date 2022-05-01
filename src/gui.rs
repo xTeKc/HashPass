@@ -70,4 +70,22 @@ fn focused(&self) -> Style {
     }
 }
 
+fn placeholder_color(&self) -> Color {
+    GRAY
+}
+
+fn value_color(&self) -> Color {
+    match self {
+        is_dark_mode => colors::LIGHT_TEXT,
+        _ => colors::DARK_TEXT,
+    }
+}
+
+fn selection_color(&self) -> Color {
+    match self {
+        is_dark_mode => colors::GRAY,
+        _ => colors::LIGHT4,
+    }
+}
+
 }
