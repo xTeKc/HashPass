@@ -1,3 +1,5 @@
+use iced::Color;
+
 const PRIMARY: Color = Color {
     r: 1.00,
     g: 0.6,
