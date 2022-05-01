@@ -89,3 +89,5 @@ fn selection_color(&self) -> Color {
 }
 
 }
+
+pub struct RuleStyle;
