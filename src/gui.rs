@@ -17,3 +17,8 @@ impl Stylesheet for MainStyle {
             }
     }
 }
+
+pub struct TextStyle {
+    pub is_dark_mode: bool,
+}
+
