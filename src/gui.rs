@@ -7,3 +7,6 @@ pub struct AppStyle {
     pub is_running: bool,
 }
 
+impl container::Stylesheet for AppStyle {
+    
+}
