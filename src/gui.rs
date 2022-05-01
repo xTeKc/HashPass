@@ -133,3 +133,9 @@ impl StyleSheet for TooltipStyle {
         }
     }
 }
+
+pub struct ButtonStyle {
+    pub is_dark_mode: bool,
+    pub foreground: Option<Color>,
+}
+
