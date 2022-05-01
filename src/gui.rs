@@ -51,7 +51,7 @@ impl Stylesheet for TextInputStyle {
                 is_dark_mode => { 0.0 },
                 _ => { 1.0 },
             },
-        };
-        Style::default()
+            ..Style::default()
+        }
     }
 }
