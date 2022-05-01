@@ -1,3 +1,4 @@
+#[path = "colors.rs"]
 mod colors;
 
 use iced::{button, container, rule, text_input, Color};
@@ -6,14 +7,14 @@ pub struct MainStyle {
     pub is_dark_mode: bool,
 }
 
-impl StyleSheet for MainStyle {
-    fn style(&self) -> Style {
-        Style {
+impl container::StyleSheet for MainStyle {
+    fn style(&self) -> container::Style {
+        container::Style {
             background: match background {
                 is_dark_mode => colors::DARK.into(),
                 _ => colors::LIGHT.into(),
             },
-            ..Style::default()
+            ..container::Style::default()
             }
     }
 }
@@ -22,14 +23,14 @@ pub struct TextStyle {
     pub is_dark_mode: bool,
 }
 
-impl StyleSheet for TextStyle {
-    fn style(&self) -> Style {
-        Style {
+impl container::StyleSheet for TextStyle {
+    fn style(&self) -> container::Style {
+        container::Style {
             background: match background {
                 is_dark_mode => colors::DARK.into(),
                 _ => colors::LIGHT.into(),
             },
-            ..Style::default()
+            ..container::Style::default()
             }
     }
 }
@@ -38,40 +39,40 @@ pub struct TextInputStyle {
     pub is_dark_mode: bool,
 }
 
-impl StyleSheet for TextInputStyle {
-    fn active(&self) -> Style {
-        Style {
+impl text_input::StyleSheet for TextInputStyle {
+    fn active(&self) -> text_input::Style {
+        text_input::Style {
             background: match background {
                 is_dark_mode => colors::DARK2.into(),
                 _ => colors::LIGHT.into(),
             },
-            border_color: DARK4,
+            border_color: colors::DARK4,
             border_radius: 0.0,
             border_width: match border_width {
                 is_dark_mode => { 0.0 },
                 _ => { 1.0 },
             },
-            ..Style::default()
+            ..text_input::Style::default()
         }
     }
 
-fn focused(&self) -> Style {
-    Style {
+fn focused(&self) -> text_input::Style {
+    text_input::Style {
         background: match background {
             is_dark_mode => colors::DARK2.into(),
             _ => colors::LIGHT2.into(),
         },
         border_color: match border_color {
-            is_dark_mode => { GRAY },
-            _ => { DARK4 },
+            is_dark_mode => { colors::GRAY },
+            _ => { colors::DARK4 },
         },
         border_width: 1.0,
-        ..active()
+        ..self.active()
     }
 }
 
 fn placeholder_color(&self) -> Color {
-    GRAY
+    colors::GRAY
 }
 
 fn value_color(&self) -> Color {
@@ -92,13 +93,13 @@ fn selection_color(&self) -> Color {
 
 pub struct RuleStyle;
 
-impl StyleSheet for RuleStyle {
-    fn style(&self) -> Style {
-        Style {
+impl rule::StyleSheet for RuleStyle {
+    fn style(&self) -> rule::Style {
+        rule::Style {
             color: colors::GRAY,
             width: 1,
             radius: 0.0,
-            fill_mode: FillMode::Padded(8),
+            fill_mode: rule::FillMode::Padded(8),
         }
     }
 }
@@ -107,29 +108,29 @@ pub struct IndexStyle {
     pub is_dark_mode: bool,
 }
 
-impl StyleSheet for IndexStyle {
-    fn style(&self) -> Style {
+impl container::StyleSheet for IndexStyle {
+    fn style(&self) -> container::Style {
         let mut c = colors::PRIMARY;
         match self {
             is_dark_mode => c.a = 0.60,
             _ => c.a = 0.0,
         }
-        Style {
+        container::Style {
             background: c.into(),
             border_width: 0.0,
-            ..Style::default()
+            ..container::Style::default()
         }
     }
 }
 
 pub struct TooltipStyle;
 
-impl StyleSheet for TooltipStyle {
-    fn style(&self) -> Style {
-        Style {
+impl container::StyleSheet for TooltipStyle {
+    fn style(&self) -> container::Style {
+        container::Style {
             text_color: colors::LIGHT_TEXT.into(),
             background: colors::DARK3.into(),
-            ..Style::default()
+            ..container::Style::default()
         }
     }
 }
@@ -139,9 +140,9 @@ pub struct ButtonStyle {
     pub foreground: Option<Color>,
 }
 
-impl StyleSheet for ButtonStyle {
-    fn active(&self) -> Style {
-        Style {
+impl button::StyleSheet for ButtonStyle {
+    fn active(&self) -> button::Style {
+        button::Style {
             background: match background {
                 is_dark_mode => colors::DARK2.into(),
                 _ => colors::LIGHT.into(),
@@ -156,27 +157,27 @@ impl StyleSheet for ButtonStyle {
                 is_dark_mode => colors::LIGHT_TEXT,
                 _ => colors::DARK_TEXT,
             },
-            ..Style::default()
+            ..button::Style::default()
         }
     }
 
-    fn hovered(&self) -> Style {
-        Style {
+    fn hovered(&self) -> button::Style {
+        button::Style {
             background: match background {
                 is_dark_mode => colors::DARK3.into(),
                 _ => colors::LIGHT2.into(),
             },
-            ..active()
+            ..self.active()
         }
     }
 
-    fn pressed(&self) -> Style {
-        Style {
+    fn pressed(&self) -> button::Style {
+        button::Style {
             background: match background {
                 is_dark_mode => colors::DARK4.into(),
                 _ => colors::LIGHT3.into(),
             },
-            ..hovered()
+            ..self.hovered()
         }
     }
 
