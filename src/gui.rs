@@ -6,7 +6,7 @@ pub struct MainStyle {
     pub is_dark_mode: bool,
 }
 
-impl Stylesheet for MainStyle {
+impl StyleSheet for MainStyle {
     fn style(&self) -> Style {
         Style {
             background: match background {
@@ -22,7 +22,7 @@ pub struct TextStyle {
     pub is_dark_mode: bool,
 }
 
-impl Stylesheet for TextStyle {
+impl StyleSheet for TextStyle {
     fn style(&self) -> Style {
         Style {
             background: match background {
@@ -38,7 +38,7 @@ pub struct TextInputStyle {
     pub is_dark_mode: bool,
 }
 
-impl Stylesheet for TextInputStyle {
+impl StyleSheet for TextInputStyle {
     fn active(&self) -> Style {
         Style {
             background: match background {
@@ -92,7 +92,7 @@ fn selection_color(&self) -> Color {
 
 pub struct RuleStyle;
 
-impl Stylesheet for RuleStyle {
+impl StyleSheet for RuleStyle {
     fn style(&self) -> Style {
         Style {
             color: colors::GRAY,
@@ -107,3 +107,17 @@ pub struct IndexStyle {
     pub is_dark_mode: bool,
 }
 
+impl StyleSheet for IndexStyle {
+    fn style(&self) -> Style {
+        let mut c = colors::PRIMARY;
+        match self {
+            is_dark_mode => c.a = 0.60,
+            _ => c.a = 0.0,
+        }
+        Style {
+            background: c.into(),
+            border_width: 0.0,
+            ..Style::default()
+        }
+    }
+}
