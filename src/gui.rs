@@ -54,4 +54,20 @@ impl Stylesheet for TextInputStyle {
             ..Style::default()
         }
     }
+
+fn focused(&self) -> Style {
+    Style {
+        background: match background {
+            is_dark_mode => colors::DARK2.into(),
+            _ => colors::LIGHT2.into(),
+        },
+        border_color: match border_color {
+            is_dark_mode => { GRAY },
+            _ => { DARK4 },
+        },
+        border_width: 1.0,
+        ..active()
+    }
+}
+
 }
