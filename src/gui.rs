@@ -124,3 +124,12 @@ impl StyleSheet for IndexStyle {
 
 pub struct TooltipStyle;
 
+impl StyleSheet for TooltipStyle {
+    fn style(&self) -> Style {
+        Style {
+            text_color: colors::LIGHT_TEXT.into(),
+            background: colors::DARK3.into(),
+            ..Style::default()
+        }
+    }
+}
