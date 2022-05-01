@@ -33,3 +33,8 @@ impl Stylesheet for TextStyle {
             }
     }
 }
+
+pub struct TextInputStyle {
+    pub is_dark_mode: bool,
+}
+
