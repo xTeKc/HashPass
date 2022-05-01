@@ -91,3 +91,14 @@ fn selection_color(&self) -> Color {
 }
 
 pub struct RuleStyle;
+
+impl Stylesheet for RuleStyle {
+    fn style(&self) -> Style {
+        Style {
+            color: colors::GRAY,
+            width: 1,
+            radius: 0.0,
+            fill_mode: FillMode::Padded(8),
+        }
+    }
+}
