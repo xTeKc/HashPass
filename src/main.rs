@@ -1,4 +1,4 @@
-mod style;
+mod ui;
 
 
 fn main () {
