@@ -14,4 +14,5 @@ rand = { version = "0.7.3", default-features = false, features = ["std"] }
 tui = { version = "0.14", default-features = false, features = ['crossterm', 'serde'] }
 thiserror = "1.0"
 iced = { version = "0.3", features = ["tokio", "svg", "glow"] }
+iced_style = "0.4.0"
 iced_native = "0.4"

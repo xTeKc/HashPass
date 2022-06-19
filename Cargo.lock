@@ -1400,6 +1400,7 @@ dependencies = [
  "crossterm 0.19.0",
  "iced",
  "iced_native",
+ "iced_style 0.4.0",
  "rand",
  "serde",
  "serde_json",
@@ -1422,7 +1423,7 @@ version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "05279cf5a83b960a1a01cff455fede8a33df720f3ff4fc9d33be79fcea9d2466"
 dependencies = [
- "iced_core",
+ "iced_core 0.4.0",
  "iced_futures",
  "iced_glow",
  "iced_glutin",
@@ -1437,6 +1438,16 @@ name = "iced_core"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fafe4a5eeee85876f3bad347338456e0f3e7fcdc2381a5ce6c3ba2a60dd769bf"
+
+[[package]]
+name = "iced_core"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ccf9133ceb345ec640047d5597fb8aa88e9cf74ce2d0277a9a62e2d6ed4a8148"
+dependencies = [
+ "bitflags",
+ "wasm-timer",
+]
 
 [[package]]
 name = "iced_futures"
@@ -1488,7 +1499,7 @@ dependencies = [
  "font-kit",
  "glam",
  "iced_native",
- "iced_style",
+ "iced_style 0.3.0",
  "raw-window-handle 0.3.4",
  "thiserror",
 ]
@@ -1499,7 +1510,7 @@ version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "35030736d160e88b79edddee7ab664a2f3ac6b4046608e298b4c853030e3cc06"
 dependencies = [
- "iced_core",
+ "iced_core 0.4.0",
  "iced_futures",
  "num-traits",
  "twox-hash",
@@ -1512,7 +1523,16 @@ version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ca93066a80759bfb31f2900d45ca4cf7500b88611607da5e380143badfcd7837"
 dependencies = [
- "iced_core",
+ "iced_core 0.4.0",
+]
+
+[[package]]
+name = "iced_style"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a90028c94ab62c13cd3b6fb1499a593a51510d4729c5b4e8e60705b2b28c6bc2"
+dependencies = [
+ "iced_core 0.5.0",
 ]
 
 [[package]]
@@ -1522,9 +1542,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9c57300b109735abcee7aed27101eb1b29016ba07ec50b6944530982231397ad"
 dependencies = [
  "dodrio",
- "iced_core",
+ "iced_core 0.4.0",
  "iced_futures",
- "iced_style",
+ "iced_style 0.3.0",
  "num-traits",
  "url",
  "wasm-bindgen",
@@ -3172,6 +3192,21 @@ name = "wasm-bindgen-shared"
 version = "0.2.69"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7e7811dd7f9398f14cc76efd356f98f03aa30419dea46aa810d71e819fc97158"
+
+[[package]]
+name = "wasm-timer"
+version = "0.2.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "be0ecb0db480561e9a7642b5d3e4187c128914e58aa84330b9493e3eb68c5e7f"
+dependencies = [
+ "futures",
+ "js-sys",
+ "parking_lot",
+ "pin-utils",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
+]
 
 [[package]]
 name = "wayland-client"
